@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: Center(
         child: ElevatedButton(
-          child: const Text("テスト"),
+          child: const Text("Widgetサンプルへ"),
           onPressed: () {
             // ボタンが押された時に呼び出されるコードを書く。
             Navigator.push(
