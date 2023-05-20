@@ -10,6 +10,7 @@ class NavigateToStatefulWidget extends StatefulWidget {
 class _NavigateToStatefulWidget extends State<NavigateToStatefulWidget> {
   @override
   Widget build(BuildContext context) {
+    // 画面部分を構築する部分
     return Scaffold(
       appBar: AppBar(
         title: const Text('Stateful Widget'),
