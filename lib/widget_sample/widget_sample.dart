@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class WidgetSample extends StatelessWidget {
+  // ここにイニシャライザを書く
+  WidgetSample(this.name, {super.key});
+  String name;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,6 +13,7 @@ class WidgetSample extends StatelessWidget {
       ),
       body: Container(
         color: Colors.red,
+        child: Text(name),
       ),
     );
   }

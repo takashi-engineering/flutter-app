@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => WidgetSample(),
+                  builder: (context) => WidgetSample("渡した値"),
                 ));
           },
         ),
