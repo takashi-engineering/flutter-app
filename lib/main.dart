@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/navigation_sample/navigate_to_stateful_widget.dart';
+import 'package:flutter_app/navigation_sample/navigate_to_stateless_widget.dart';
 import 'package:flutter_app/widget_sample/widget_sample.dart';
 
 // 1. エントリーポイントのmain関数
@@ -107,19 +109,59 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      body: Center(
-        child: ElevatedButton(
-          child: const Text("Widgetサンプルへ"),
+      // body: Center(
+      //   child: ElevatedButton(
+      //     child: const Text("Widgetサンプルへ"),
+      //     onPressed: () {
+      //       // ボタンが押された時に呼び出されるコードを書く。
+      //       Navigator.push(
+      //           context,
+      //           MaterialPageRoute(
+      //             builder: (context) => const WidgetSample(
+      //               name: '渡した値',
+      //             ),
+      //             // builder: (context) => const WidgetSample(),
+      //           ));
+      //     },
+      //   ),
+      // ),
+
+      body: Column(children: [
+        ElevatedButton(
           onPressed: () {
-            // ボタンが押された時に呼び出されるコードを書く。
+            // ボタンが押された時に呼び出されるコード
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => WidgetSample("渡した値"),
+                  builder: (context) =>
+                      const WidgetSample(name: "Widget Sample"),
                 ));
           },
+          child: const Text("Widgetサンプルへ"),
         ),
-      ),
+        ElevatedButton(
+          onPressed: () {
+            // ボタンが押された時に呼び出されるコード
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NavigateToStatelessWidget(),
+                ));
+          },
+          child: const Text("Stateless Widget Sampleへ"),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            // ボタンが押された時に呼び出されるコード
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NavigateToStatefulWidget(),
+                ));
+          },
+          child: const Text("Stateful Widget Sampleへ"),
+        ),
+      ]),
 
       // 右下の「+」ボタンに対応するフローティングアクションボタン
       floatingActionButton: FloatingActionButton(
