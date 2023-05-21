@@ -15,17 +15,23 @@ class _NavigateToStatefulWidget extends State<NavigateToStatefulWidget> {
       appBar: AppBar(
         title: const Text('Stateful Widget'),
       ),
-      // body: const Column(
-      //   children: [
-      //     Text("Navigate to Stateful Widget Sample"),
-      //   ],
-      // ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
+        child: Column(
+          children: [
+            const Text("Navigate to Stateful Widget Sample"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/stateless-widget');
+              },
+              child: const Text("Stateless Widget Sampleへ"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Go back!'),
+            ),
+          ],
         ),
       ),
     );

@@ -21,7 +21,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+        '/stateless-widget': (context) => const NavigateToStatelessWidget(),
+        '/stateful-widget': (context) => const NavigateToStatefulWidget(),
+      },
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -126,50 +132,54 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      body: Column(children: [
-        ElevatedButton(
-          onPressed: () {
-            // ボタンが押された時に呼び出されるコード
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      const WidgetSample(name: "Widget Sample"),
-                ));
-          },
-          child: const Text("Widgetサンプルへ"),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            // ボタンが押された時に呼び出されるコード
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const NavigateToStatelessWidget(),
-                ));
-          },
-          child: const Text("Stateless Widget Sampleへ"),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            // ボタンが押された時に呼び出されるコード
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const NavigateToStatefulWidget(),
-                ));
-          },
-          child: const Text("Stateful Widget Sampleへ"),
-        ),
-      ]),
+      body: Center(
+        child: Column(children: [
+          ElevatedButton(
+            onPressed: () {
+              // ボタンが押された時に呼び出されるコード
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const WidgetSample(name: "Widget Sample"),
+                  ));
+            },
+            child: const Text("Widgetサンプルへ"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // ボタンが押された時に呼び出されるコード
+              Navigator.pushNamed(context, '/stateless-widget');
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) => const NavigateToStatelessWidget(),
+              //     ));
+            },
+            child: const Text("Stateless Widget Sampleへ"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // ボタンが押された時に呼び出されるコード
+              Navigator.pushNamed(context, '/stateful-widget');
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) => const NavigateToStatefulWidget(),
+              //     ));
+            },
+            child: const Text("Stateful Widget Sampleへ"),
+          ),
+        ]),
+      ),
 
       // 右下の「+」ボタンに対応するフローティングアクションボタン
-      floatingActionButton: FloatingActionButton(
-        // onPressed: () => {print("押したね？")}, child: const Icon(Icons.timer),
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   // onPressed: () => {print("押したね？")}, child: const Icon(Icons.timer),
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
       // drawer: const Drawer(child: Center(child: Text("Drawer"))),
       // endDrawer: const Drawer(child: Center(child: Text("End Drawer"))),
     );
