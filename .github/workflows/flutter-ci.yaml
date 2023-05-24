@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize]
     # 対象ブランチを指定（developブランチ以下に作成された場合がターゲット）
     branches:
-      - develop
+      - master
   
   # GitHubページ上から手動で実行できる
   workflow_dispatch:
