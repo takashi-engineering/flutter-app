@@ -10,24 +10,23 @@ class NavigateToStatelessWidget extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Stateless Widget'),
       ),
-      // body: const Column(
-      //   children: [
-      //     Text("Navigate to Stateless Widget Sample"),
-      //     // Center(
-      //     //   child: ElevatedButton(
-      //     //       onPressed: () {
-      //     //         Navigator.pop(context);
-      //     //       },
-      //     //       child: const Text("Go back!")),
-      //     // ),
-      //   ],
-      // ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
+        child: Column(
+          children: [
+            const Text("Navigate to Stateless Widget Sample"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/stateful-widget');
+              },
+              child: const Text("Stateful Widget Sampleへ"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Go back!'),
+            ),
+          ],
         ),
       ),
     );
