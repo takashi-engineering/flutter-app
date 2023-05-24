@@ -7,7 +7,7 @@ on:
   pull_request:
     # プルリクエスト作成時とプルリクエストを対象にコミットが行われた時
     types: [opened, synchronize]
-    # 対象ブランチを指定（developブランチ以下に作成された場合がターゲット）
+    # 対象ブランチを指定（masterブランチに対するプルリクエストが対象）
     branches:
       - master
   
