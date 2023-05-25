@@ -144,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         const WidgetSample(name: "Widget Sample"),
                   ));
             },
-            child: const Text("Widgetサンプルへ "),
+            child: const Text("Widgetサンプルへ"),
           ),
           ElevatedButton(
             onPressed: () {
