@@ -141,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        const WidgetSample(name: "Widget Sample"),
+                        const WidgetSample(name: "Widget Sample "),
                   ));
             },
             child: const Text("Widgetサンプルへ"),
